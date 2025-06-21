@@ -174,7 +174,7 @@
   <div id="lobby" class="container">
     <h1 class="title">Kai Runner</h1>
     <button class="button" onclick="startGame()">PLAY</button>
-    <button class="button" onclick="showInfo()">INFO</button>
+    <button id="infoBtn" class="button" onclick="showInfo()">INFO</button>
   </div>
   
   <div id="game" style="display:none">
@@ -272,6 +272,7 @@
       infoTextElement = document.getElementById('infoText'); // Get reference to the info text element
       showLobby(); // This will now handle starting initial lobby animations
     });
+    document.getElementById('infoBtn').addEventListener('click', showInfo);
 
     function showInfo() {
       document.getElementById('infoPopup').style.display = 'block';
