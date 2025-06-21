@@ -173,7 +173,7 @@
 <body>
   <div id="lobby" class="container">
     <h1 class="title">Kai Runner</h1>
-    <button class="button" onclick="startGame()">PLAY</button>
+    <button id="playBtn" class="button" onclick="startGame()">PLAY</button>
     <button id="infoBtn" class="button" onclick="showInfo()">INFO</button>
   </div>
   
@@ -190,15 +190,15 @@
   <div class="game-over" id="gameOver">
     <h2>Game Over!</h2>
     <p>Score: <span id="finalScore">0</span></p>
-    <button class="button" onclick="startGame()">Play Again</button>
-    <button class="button" onclick="showLobby()">Lobby</button>
+    <button id="playAgainBtn" class="button" onclick="startGame()">Play Again</button>
+    <button id="showLobbyBtn" class="button" onclick="showLobby()">Lobby</button>
   </div>
   
   <div class="info-popup" id="infoPopup">
     <h3>How to Play</h3>
     <p>Click, tap or press spacebar to jump and avoid obstacles!</p>
     <p>Score points by surviving longer.</p>
-    <button class="button" onclick="hideInfo()">Okay</button>
+    <button id="hideInfoBtn" class="button">Okay</button>
   </div>
 
   <script>
@@ -273,6 +273,10 @@
       showLobby(); // This will now handle starting initial lobby animations
     });
     document.getElementById('infoBtn').addEventListener('click', showInfo);
+    document.getElemenfById('playBtn').addEventListener('click', startGame);
+    document.getElementById('playAgainBtn').addEventListener('click', startGame);
+    document.getElementById('showLobbyBtn').addEventListener('click', showLobby);
+    document.getElementById('hideInfoBtn').addEventListener('click', hideInfo);
 
     function showInfo() {
       document.getElementById('infoPopup').style.display = 'block';
